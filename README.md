@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+=======
+Tugas 1<br>
+Nama : Eki Pratama <br>
+Nim : 24.12.3354
+https://eventamikom-3354-master-24huqe.free.laravel.cloud/
+
+>>>>>>> 419306dc1089c34e7910693b221d2f044e2c7be2
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
