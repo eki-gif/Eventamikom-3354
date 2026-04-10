@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 Tugas 1<br>
 Nama : Eki Pratama <br>
 Nim : 24.12.3354
