@@ -1,38 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bantuan / FAQ</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body class="bg-slate-50 min-h-screen flex items-center justify-center p-6">
-    <div class="max-w-3xl w-full bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
-        <h1 class="text-3xl font-bold text-center text-slate-800 mb-6">FAQ Sederhana</h1>
+<body class="max-w-[58%] mx-auto mt-5">
+  <header class="flex justify-between items-center">
+    <section>
+      <h1 class="font-semibold text-gray-800 underline">AmikomEvents.</h1>
+    </section>
 
-        <div class="space-y-4">
-            <div class="p-4 bg-slate-100 rounded-xl">
-                <h2 class="font-semibold text-slate-800">1. Apa itu AmikomEventHub?</h2>
-                <p class="text-slate-600 mt-1">Platform sederhana untuk menampilkan informasi event kampus.</p>
-            </div>
+    <section class="flex gap-3 underline text-gray-500">
+      <a href="{{ url('/') }}">Home</a>
+      <a href="{{ url('/katalog') }}">Katalog</a>
+      <a href="{{ url('/bantuan') }}">Bantuan</a>
+      <a href="{{ url('/profile') }}">Profile</a>
+    </section>
+  </header>
+  <!-- Title -->
+    <h1 class="text-2xl font-semibold mb-6 mt-16">Bantuan (FAQ)</h1>
 
-            <div class="p-4 bg-slate-100 rounded-xl">
-                <h2 class="font-semibold text-slate-800">2. Bagaimana cara melihat katalog event?</h2>
-                <p class="text-slate-600 mt-1">Klik menu Katalog untuk melihat daftar event yang tersedia.</p>
-            </div>
+    <!-- FAQ -->
+    <div class="space-y-4">
 
-            <div class="p-4 bg-slate-100 rounded-xl">
-                <h2 class="font-semibold text-slate-800">3. Bagaimana cara menghubungi admin?</h2>
-                <p class="text-slate-600 mt-1">Masuk ke halaman Kontak untuk melihat informasi email admin.</p>
+        <!-- Item -->
+        <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm p-5">
+            <button @click="open = !open" class="w-full text-left flex justify-between items-center">
+                <span class="font-medium">Bagaimana cara membeli tiket?</span>
+                <span x-text="open ? '-' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="mt-3 text-gray-600 text-sm leading-relaxed">
+                Pilih event di halaman katalog, lalu klik dan ikuti proses pembayaran hingga selesai.
             </div>
         </div>
 
-        <div class="mt-8 flex flex-wrap gap-3 justify-center">
-            <a href="/" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition">Home</a>
-            <a href="/profil" class="bg-slate-700 hover:bg-slate-800 text-white px-4 py-2 rounded-lg transition">Profil</a>
-            <a href="/katalog" class="bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded-lg transition">Katalog</a>
-            <a href="/kontak" class="bg-violet-600 hover:bg-violet-700 text-white px-4 py-2 rounded-lg transition">Kontak</a>
+        <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm p-5">
+            <button @click="open = !open" class="w-full text-left flex justify-between items-center">
+                <span class="font-medium">Metode pembayaran apa saja?</span>
+                <span x-text="open ? '-' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="mt-3 text-gray-600 text-sm">
+                Transfer bank, e-wallet, dan kartu debit tersedia.
+            </div>
         </div>
+
+        <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm p-5">
+            <button @click="open = !open" class="w-full text-left flex justify-between items-center">
+                <span class="font-medium">Apakah tiket bisa direfund?</span>
+                <span x-text="open ? '-' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="mt-3 text-gray-600 text-sm">
+                Tidak bisa, kecuali event dibatalkan oleh penyelenggara.
+            </div>
+        </div>
+
+        <div x-data="{ open: false }" class="bg-white rounded-xl shadow-sm p-5">
+            <button @click="open = !open" class="w-full text-left flex justify-between items-center">
+                <span class="font-medium">Bagaimana cara menghubungi admin?</span>
+                <span x-text="open ? '-' : '+'"></span>
+            </button>
+            <div x-show="open" x-transition class="mt-3 text-gray-600 text-sm">
+                Bisa melalui email atau halaman profile.
+            </div>
+        </div>
+
     </div>
+
+</div>
+
+<!-- AlpineJS (untuk accordion) -->
+<script src="//unpkg.com/alpinejs" defer></script>
 </body>
 </html>
