@@ -25,7 +25,7 @@ Route::get('/tentang', function() {
 });
 
 Route::get('/kontak', function() {
-    return view('kontact');
+    return view('kontak');
 });
 
 Route::get('/profil', function(){
