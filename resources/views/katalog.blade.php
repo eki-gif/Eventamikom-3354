@@ -17,7 +17,7 @@
       <a href="{{ url('/') }}">Home</a>
       <a href="{{ url('/katalog') }}">Katalog</a>
       <a href="{{ url('/bantuan') }}">Bantuan</a>
-      <a href="{{ url('/profile') }}">Profile</a>
+      <a href="{{ url('/profile') }}">Profil</a>
     </section>
   </header>
 
