@@ -23,7 +23,7 @@
   <main>
     <section class="mt-24">
       <img src="https://images.genpi.co/uploads/arsip/normal/2022/04/20/aktor-jefri-nichol-foto-instagram-jefrinicholfansbase-oqcn.jpg" alt="" class="w-[12%] h-[12%] rounded-md">
-      <p class="mt-3 font-semibold text-gray-800">Ahmad Firza Ananda</p>
+      <p class="mt-3 font-semibold text-gray-800">Eki Gantenk</p>
       <p class="font-semibold text-gray-600">Fullstack Developer</p>
     </section>
 
