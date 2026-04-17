@@ -28,8 +28,8 @@ Route::get('/kontak', function() {
     return view('contact');
 });
 
-Route::get('/profile', function(){
-    return view('profile');
+Route::get('/profil', function(){
+    return view('profil');
 });
 
 Route::get('/katalog', function(){
