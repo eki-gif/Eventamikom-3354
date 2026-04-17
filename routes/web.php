@@ -20,7 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 Route::get('/tentang', function() {
     return '<h1>Ini adalah halaman tentang aplikasi Event Hub</h1>';
 });
