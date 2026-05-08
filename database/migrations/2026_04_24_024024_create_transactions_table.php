@@ -7,19 +7,14 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations
+     * Run the migrations.
      */
     public function up(): void
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-
-            // Foreign Key ke events
-            $table->foreignId('event_id')
-                  ->constrained()
-                  ->cascadeOnDelete();
-
-            $table->string('order_id')->unique(); // nomor pesanan unik
+            $table->foreignId('event_id')->constrained()->cascadeOnDelete();
+            $table->string('order_id');
             $table->string('customer_name');
             $table->string('customer_email');
             $table->string('customer_phone');
@@ -31,7 +26,7 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations
+     * Reverse the migrations.
      */
     public function down(): void
     {
