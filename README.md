@@ -18,7 +18,7 @@ Halaman Beranda      : https://eventamikom-3354.free.laravel.cloud/ <br>
 Halaman Detail Event : https://eventamikom-3354.free.laravel.cloud/event-detail.html <br>
 Halaman Chekout      : https://eventamikom-3354.free.laravel.cloud/checkout.html <br>
 
-Tugas <br>
+Tugas 3<br>
 "Menambahkan Database Migration/Seending"
 
 
