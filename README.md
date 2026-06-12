@@ -41,7 +41,7 @@ https://eventamikom-3354.free.laravel.cloud/admin/events
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 <br>
-Commit yess = Tugas 8 pak Maaf salah Penamaan<br>
+Commit yess = Tugas 8 pak Maaf salah Penamaan pak<br>
 
 ## About Laravel
 
