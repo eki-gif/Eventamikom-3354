@@ -33,6 +33,7 @@ Tugas 3<br>
 Tugas 4 <br>
 https://eventamikom-3354.free.laravel.cloud/admin/events
 
+Commit yess = Tugas 8 pak Maaf salah Penamaan pak<br>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -41,7 +42,6 @@ https://eventamikom-3354.free.laravel.cloud/admin/events
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 <br>
-Commit yess = Tugas 8 pak Maaf salah Penamaan pak<br>
 
 ## About Laravel
 
