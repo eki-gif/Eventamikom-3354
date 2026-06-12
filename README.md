@@ -33,6 +33,8 @@ Tugas 3<br>
 Tugas 4 <br>
 https://eventamikom-3354.free.laravel.cloud/admin/events
 
+Tugas 8 <br>
+https://eventamikom-3354.free.laravel.cloud/admin/login
 Commit yess = Tugas 8 pak Maaf salah Penamaan pak<br>
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 <p align="center">
