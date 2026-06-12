@@ -1,132 +1,91 @@
-{{-- <!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard - AmikomEventHub</title>
+    <title>@yield('title', 'Admin Dashboard') - AmikomEventHub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
     </style>
 </head>
-
 <body class="bg-slate-50 text-slate-900 flex min-h-screen">
 
-    <!-- Sidebar -->
-    <aside class="w-64 bg-indigo-900 text-indigo-100 flex flex-col p-6 space-y-8 sticky top-0 h-screen">
-        <div class="flex items-center gap-3">
-            <div
-                class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-900 font-bold text-xl">
-                AH</div>
-            <span class="text-xl font-bold text-white tracking-tight">AmikomEventHub</span>
+    <aside class="w-64 min-h-screen bg-[#2c297e] text-white flex flex-col justify-between sticky top-0 h-screen">
+        
+        <div>
+            <div class="flex items-center gap-3 px-6 py-8">
+                <div class="bg-white text-[#2c297e] font-black text-xl px-2 py-1 rounded-xl">AH</div>
+                <span class="text-xl font-bold tracking-wide">AmikomEventHub</span>
+            </div>
+
+            <nav class="px-4 space-y-1">
+                <p class="px-2 text-[11px] font-bold text-indigo-300 uppercase tracking-widest mb-4">Main Menu</p>
+
+                <a href="{{ route('admin.dashboard') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('admin.dashboard') ? 'bg-[#3b35a5] font-bold shadow-sm' : 'font-medium text-gray-300 hover:bg-white/5 hover:text-white' }}">
+                    Dashboard
+                </a>
+
+                <a href="{{ route('admin.events.index') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('admin.events.*') ? 'bg-[#3b35a5] font-bold shadow-sm' : 'font-medium text-gray-300 hover:bg-white/5 hover:text-white' }}">
+                    Kelola Event
+                </a>
+
+                <a href="{{ route('admin.categories.index') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('admin.categories.*') ? 'bg-[#3b35a5] font-bold shadow-sm' : 'font-medium text-gray-300 hover:bg-white/5 hover:text-white' }}">
+                    Kelola Kategori
+                </a>
+
+                <a href="{{ route('admin.partners.index') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('admin.partners.*') ? 'bg-[#3b35a5] font-bold shadow-sm' : 'font-medium text-gray-300 hover:bg-white/5 hover:text-white' }}">
+                    Kelola Partner
+                </a>
+            </nav>
         </div>
 
-        <nav class="flex-1 space-y-2">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-4 px-2">Main Menu</p>
-            <a href="admin-dashboard.html"
-                class="flex items-center gap-3 px-4 py-3 bg-indigo-800 text-white rounded-xl font-bold transition">
-                <svg class="w-5 h-5 text-indigo-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z">
-                    </path>
-                </svg>
-                Dashboard
+        <div class="p-4 mb-4 border-t border-[#3b35a5] pt-4 mt-4">
+            <a href="{{ url('/') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 font-medium text-gray-300 hover:text-white hover:bg-white/5 mb-2">
+                Kembali ke Website
             </a>
-            <a href="admin-events.html"
-                class="flex items-center gap-3 px-4 py-3 hover:bg-indigo-800 rounded-xl font-bold transition">
-                <svg class="w-5 h-5 text-indigo-400 group-hover:text-indigo-300" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
-                    </path>
-                </svg>
-                Kelola Event
-            </a>
-            <a href="admin-transactions.html"
-                class="flex items-center gap-3 px-4 py-3 hover:bg-indigo-800 rounded-xl font-bold transition">
-                <svg class="w-5 h-5 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
-                    </path>
-                </svg>
-                Laporan Transaksi
-            </a>
-        </nav>
 
-        <div class="pt-6 border-t border-indigo-800">
-            <a href="index.html"
-                class="flex items-center gap-3 px-4 py-3 text-indigo-300 hover:text-white transition font-medium">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                    </path>
-                </svg>
-                Keluar
-            </a>
+            <form action="{{ route('admin.logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="w-full flex items-center gap-3 px-4 py-3 rounded-xl text-red-300 hover:text-white hover:bg-red-500/20 transition-all duration-200 font-medium text-left">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                    </svg>
+                    Keluar
+                </button>
+            </form>
         </div>
     </aside>
 
-    <!-- Main Content -->
-    <main class="flex-1 p-10 overflow-y-auto">
-        <!-- Header -->
-        <header class="flex justify-between items-center mb-10">
+    <main class="flex-1 p-10 overflow-y-auto w-full">
+        <header class="flex justify-between items-center mb-10 w-full col-span-full">
             <div>
-                <h1 class="text-3xl font-black">Dashboard Ringkasan</h1>
-                <p class="text-slate-500 font-medium">Selamat datang kembali, Admin!</p>
+                <h1 class="text-3xl font-black">@yield('page_title', 'Dashboard')</h1>
+                <p class="text-slate-500 font-medium">@yield('page_subtitle', 'Selamat datang kembali, Admin!')</p>
             </div>
             <div class="flex items-center gap-4">
                 <div class="text-right hidden md:block">
-                    <p class="font-bold">Admin Super</p>
+                    <p class="font-bold">Admin</p>
                     <p class="text-xs text-slate-400">Penyelenggara Utama</p>
                 </div>
                 <div class="w-12 h-12 bg-white rounded-2xl shadow-sm border flex items-center justify-center p-1">
-                    <img src="https://ui-avatars.com/api/?name=Admin+Super&background=6366f1&color=fff"
-                        class="rounded-xl">
+                    <img src="https://ui-avatars.com/api/?name=admin&background=6366f1&color=fff" class="rounded-xl" alt="Admin Avatar">
                 </div>
             </div>
         </header>
 
-        <!-- Stats Grid -->
+        @if(session('success'))
+            <div class="bg-green-100 text-green-700 p-4 rounded-xl mb-6 font-bold text-sm">
+                {{ session('success') }}
+            </div>
+        @endif
+
         @yield('content')
+        
     </main>
 
-</body>
-
-</html> --}}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $title ?? 'Admin Dashboard' }} - AmikomEventHub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Plus Jakarta Sans', sans-serif; }</style>
-</head>
-<body class="bg-slate-50 text-slate-900 flex min-h-screen">
-    <aside class="w-64 bg-indigo-900 text-indigo-100 flex flex-col p-6 space-y-8 sticky top-0 h-screen">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-indigo-900 font-bold text-xl">AH</div>
-            <span class="text-xl font-bold text-white tracking-tight">AmikomEventHub</span>
-        </div>
-        <nav class="flex-1 space-y-2">
-            <p class="text-[10px] font-bold uppercase tracking-widest text-indigo-400 mb-4 px-2">Main Menu</p>
-            <a href="#" class="flex items-center gap-3 px-4 py-3 hover:bg-indigo-800 rounded-xl font-bold transition">Dashboard</a>
-            <a href="{{ route('admin.events.index') }}" class="flex items-center gap-3 px-4 py-3 {{ request()->routeIs('events.*') ? 'bg-indigo-800 text-white' : '' }} rounded-xl font-bold transition">
-                Kelola Event
-            </a>
-        </nav>
-    </aside>
-
-
-    <main class="flex-1 p-10 overflow-y-auto">
-        @yield('content')
-    </main>
 </body>
 </html>
