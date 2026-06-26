@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 // Import Controllers untuk halaman User/Guest
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
-use App\Http\Controllers\CheckoutController; // <-- Tambahan Baru dari Modul 10
+use App\Http\Controllers\CheckoutController; 
 
 // Import Controllers untuk halaman Admin
 use App\Http\Controllers\Admin\AuthController;
@@ -22,20 +22,34 @@ use App\Http\Controllers\Admin\TransactionController;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
 Route::get('/event/{event}', [EventController::class, 'show'])->name('events.show');
-
-// Rute Checkout Baru dari Modul 10
+Route::get('/ticket/{order_id}', [CheckoutController::class, 'ticket'])->name('checkout.ticket');
+// ==========================================
+// RUTE SISTEM CHECKOUT & PEMBAYARAN MIDTRANS
+// ==========================================
+// 1. Menampilkan halaman form pengisian nama & email
 Route::get('/checkout/{event}', [CheckoutController::class, 'create'])->name('checkout.create');
+
+// 2. Memproses data form saat diklik "Lanjut Pembayaran"
 Route::post('/checkout/{event}', [CheckoutController::class, 'store'])->name('checkout.store');
 
-Route::get('/my-ticket', [EventController::class, 'ticket'])->name('ticket');
+// 3. Menampilkan halaman yang memunculkan Popup Midtrans
+Route::get('/payment/{order_id}', [CheckoutController::class, 'payment'])->name('checkout.payment');
 
+// 4. Menampilkan halaman sukses setelah pembayaran selesai
+Route::get('/success/{order_id}', [CheckoutController::class, 'success'])->name('checkout.success');
+
+
+// ==========================================
+// Rute Lain-lain
+// ==========================================
+Route::get('/my-ticket', [CheckoutController::class, 'ticket'])->name('ticket');
 Route::get('/tentang', function () { return '<h1>Ini adalah halaman tentang aplikasi Event Hub</h1>'; });
 Route::get('/kontak', function () { return view('kontak'); });
 Route::get('/profile', function () { return view('profil'); });
 Route::get('/katalog', function () { return view('katalog'); });
 Route::get('/bantuan', function () { return view('bantuan'); });
+
 
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +77,5 @@ Route::prefix('admin')->name('admin.')->group(function () {
         
         // Rute Transaksi (Berdasarkan modul 8 & 10)
         Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
-        
     });
 });
