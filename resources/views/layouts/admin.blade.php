@@ -40,6 +40,16 @@
                 <a href="{{ route('admin.partners.index') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('admin.partners.*') ? 'bg-[#3b35a5] font-bold shadow-sm' : 'font-medium text-gray-300 hover:bg-white/5 hover:text-white' }}">
                     Kelola Partner
                 </a>
+
+                <div class="pt-4 mt-2 border-t border-[#3b35a5]/50">
+                    <p class="px-2 text-[11px] font-bold text-indigo-300 uppercase tracking-widest mb-4">Laporan</p>
+                    <a href="{{ route('admin.transactions.index') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('admin.transactions.index') ? 'bg-[#3b35a5] font-bold shadow-sm' : 'font-medium text-gray-300 hover:bg-white/5 hover:text-white' }}">
+                        Semua Transaksi
+                    </a>
+                    <a href="{{ route('admin.transactions.success') }}" class="block px-4 py-3 rounded-xl transition-all duration-200 {{ request()->routeIs('admin.transactions.success') ? 'bg-[#3b35a5] font-bold shadow-sm' : 'font-medium text-gray-300 hover:bg-white/5 hover:text-white' }}">
+                        Transaksi Sukses
+                    </a>
+                </div>
             </nav>
         </div>
 

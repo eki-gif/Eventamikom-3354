@@ -14,4 +14,15 @@ class TransactionController extends Controller
         
         return view('admin.transactions.index', compact('transactions'));
     }
+
+    public function success()
+    {
+        // Mengambil transaksi yang statusnya success atau settlement
+        $transactions = Transaction::with('event')
+            ->whereIn('status', ['success', 'settlement'])
+            ->latest()
+            ->paginate(20);
+            
+        return view('admin.transactions.index', compact('transactions'));
+    }
 }

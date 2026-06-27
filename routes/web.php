@@ -84,5 +84,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         
         // Rute Transaksi (Berdasarkan modul 8 & 10)
         Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
+        Route::get('transactions/success', [TransactionController::class, 'success'])->name('transactions.success');
     });
 });
