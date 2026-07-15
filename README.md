@@ -45,6 +45,10 @@ form Pemesanan : https://eventamikom-3354.free.laravel.cloud/checkout/7<br>
 Halaman Pembayaran Midtrans : https://eventamikom-3354.free.laravel.cloud/payment/TRX-6CQCMMOL-1782581287 <br>
 Laporan Transaksi : https://eventamikom-3354.free.laravel.cloud/admin/transactions <br>
 
+Tugas 12 <br>
+Transaksi : https://eventamikom-3374-main-jjpdch.free.laravel.cloud/checkout/5 <br
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
