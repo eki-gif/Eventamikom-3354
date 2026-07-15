@@ -39,6 +39,8 @@ Route::get('/payment/{order_id}', [CheckoutController::class, 'payment'])->name(
 // 4. Menampilkan halaman sukses setelah pembayaran selesai
 Route::get('/success/{order_id}', [CheckoutController::class, 'success'])->name('checkout.success');
 
+// Webhook Midtrans
+Route::post('/midtrans/callback', [\App\Http\Controllers\MidtransWebhookController::class, 'handle']);
 
 // ==========================================
 // Rute Lain-lain
@@ -85,5 +87,7 @@ Route::prefix('admin')->name('admin.')->group(function () {
         // Rute Transaksi (Berdasarkan modul 8 & 10)
         Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
         Route::get('transactions/success', [TransactionController::class, 'success'])->name('transactions.success');
-    });
+
+  
+        });
 });

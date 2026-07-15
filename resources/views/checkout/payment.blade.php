@@ -27,8 +27,13 @@
     document.getElementById('pay-button').onclick = function () {
         snap.pay('{{ $transaction->snap_token }}', {
             onSuccess: function(result){ window.location.href = "{{ route('checkout.success', $transaction->order_id) }}"; },
-            onPending: function(result){ window.location.href = "{{ route('checkout.success', $transaction->order_id) }}"; },
-            onError: function(result){ alert("Pembayaran Gagal!"); }
+            onPending: function(result){ 
+                alert("Menunggu pembayaran Anda. Silakan selesaikan pembayaran sesuai instruksi.");
+            },
+            onError: function(result){ alert("Pembayaran Gagal!"); },
+            onClose: function(){
+                alert("Anda belum menyelesaikan pembayaran.");
+            }
         });
     };
     window.onload = function() {

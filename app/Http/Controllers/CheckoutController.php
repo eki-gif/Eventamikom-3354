@@ -107,6 +107,9 @@ class CheckoutController extends Controller
                     'quantity' => 1,
                     'name' => 'Biaya Layanan',
                 ]
+            ],
+            'callbacks' => [
+                'finish' => route('checkout.success', $order_id)
             ]
         ];
 
